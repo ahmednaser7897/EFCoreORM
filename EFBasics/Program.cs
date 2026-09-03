@@ -5,7 +5,7 @@
         public static void Main()
         {
             EFBasics.Run();
-            TestDbContext.Run();
+            //TestDbContext.Run();
         }
 
     }

@@ -1,12 +1,17 @@
-﻿namespace ReverseEngineering
+﻿using ReverseEngineering.Data;
+namespace ReverseEngineering
 {
-    //Scaffold-DbContext 'Server=(localdb)\\MSSQLLocalDB;Database=TechTalk;Integrated Security=True;TrustServerCertificate=True;' Microsoft.EntityFrameworkCore.SqlServer
     public static class Program
     {
         public static void Main()
         {
-            Console.WriteLine("hiii");
+            using var context = new TechTalkContext();
+            foreach (var item in context.Speakers)
+            {
+                Console.WriteLine(item.FirstName + " " + item.LastName);
+            }
         }
 
     }
 }
+
