@@ -4,6 +4,7 @@ using EFMigration.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EFMigration.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260905123048_ChangeSchedulesectionToOneTOMany")]
+    partial class ChangeSchedulesectionToOneTOMany
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -280,7 +283,8 @@ namespace EFMigration.Migrations
 
                     b.Property<string>("Title")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("VARCHAR");
 
                     b.Property<bool>("WED")
                         .HasColumnType("bit");
@@ -323,7 +327,7 @@ namespace EFMigration.Migrations
                             SUN = false,
                             THU = false,
                             TUE = false,
-                            Title = "TwiceAWeek",
+                            Title = "Twice-a-Week",
                             WED = true
                         },
                         new
@@ -385,14 +389,7 @@ namespace EFMigration.Migrations
 
                     b.HasIndex("ScheduleId");
 
-                    b.ToTable("Sections", null, t =>
-                        {
-                            t.Property("EndTime")
-                                .HasColumnName("Section_EndTime");
-
-                            t.Property("StartTime")
-                                .HasColumnName("Section_StartTime");
-                        });
+                    b.ToTable("Sections", (string)null);
 
                     b.HasData(
                         new
@@ -635,35 +632,11 @@ namespace EFMigration.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.OwnsOne("EFMigration.Entities.TimeSlot", "TimeSlot", b1 =>
-                        {
-                            b1.Property<int>("SectionId")
-                                .HasColumnType("int");
-
-                            b1.Property<TimeSpan>("EndTime")
-                                .HasColumnType("TIME")
-                                .HasColumnName("EndTime");
-
-                            b1.Property<TimeSpan>("StartTime")
-                                .HasColumnType("TIME")
-                                .HasColumnName("StartTime");
-
-                            b1.HasKey("SectionId");
-
-                            b1.ToTable("Sections");
-
-                            b1.WithOwner()
-                                .HasForeignKey("SectionId");
-                        });
-
                     b.Navigation("Course");
 
                     b.Navigation("Instructor");
 
                     b.Navigation("Schedule");
-
-                    b.Navigation("TimeSlot")
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("EFMigration.Entities.Course", b =>

@@ -1,4 +1,6 @@
-﻿namespace EFMigration.Entities
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace EFMigration.Entities
 {
     // Course and section has one to many relationship
     // where course may has many sections (Optional) 
@@ -26,13 +28,32 @@
 
         public ICollection<Student> Students { get; set; } = new List<Student>();
 
-        public ICollection<Schedule> Schedules { get; set; } = new List<Schedule>();
-        public ICollection<SectionSchedule> SectionSchedules { get; set; } = new List<SectionSchedule>();
+        // we disided not to add SectionSchedule table 
+        // the relation between section and schedule is one to many
+        // it is not many to many because one section can have only one schedule 
+        // and one schedule can have many sections
+        // so we can add ScheduleId to Section table
+        //public ICollection<Schedule> Schedules { get; set; } = new List<Schedule>();
+        //public ICollection<SectionSchedule> SectionSchedules { get; set; } = new List<SectionSchedule>();
+        public int ScheduleId { get; set; }
+        public Schedule Schedule { get; set; } = null!;
+        public TimeSpan StartTime { get; set; }
+        public TimeSpan EndTime { get; set; }
+
+        public TimeSlot TimeSlot { get; set; } = null!;
         public override string ToString()
         {
             return $"Section Name: {SectionName} | Id: {Id} ";
         }
+    }
+    public class TimeSlot
+    {
+        public TimeSpan StartTime { get; set; }
+        public TimeSpan EndTime { get; set; }
 
-
+        public override string ToString()
+        {
+            return $"{StartTime.ToString("hh\\:mm")} - {EndTime.ToString("hh\\:mm")}";
+        }
     }
 }
