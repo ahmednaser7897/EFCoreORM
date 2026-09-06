@@ -1,6 +1,7 @@
 <Solution>
   <Project Path="EFBasics/EFBasics.csproj" Id="114c2a65-a64c-4b23-a5ba-2b06fce8ed7a" />
   <Project Path="EFConfiguration/EFConfiguration.csproj" Id="2e953849-e247-4962-b735-d4d84584178c" />
+  <Project Path="EFCreateAndDropAPI/EFCreateAndDropAPI.csproj" Id="919d368b-c781-4967-ba18-fb72ab4419d9" />
   <Project Path="EFMigration/EFMigration.csproj" Id="1b6835f1-827c-4f44-8054-81972f1993e8" />
   <Project Path="EFMigrationInheritance/EFMigrationInheritance.csproj" Id="bb13d8e3-399b-402a-8ee8-8ed0e2d3daf6" />
   <Project Path="EntityTypesAndMapping/EntityTypesAndMapping.csproj" Id="0b6b08b9-c687-4730-9b97-f301da1f9c73" />
