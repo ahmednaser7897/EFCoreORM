@@ -4,6 +4,7 @@
   <Project Path="EFCreateAndDropAPI/EFCreateAndDropAPI.csproj" Id="919d368b-c781-4967-ba18-fb72ab4419d9" />
   <Project Path="EFMigration/EFMigration.csproj" Id="1b6835f1-827c-4f44-8054-81972f1993e8" />
   <Project Path="EFMigrationInheritance/EFMigrationInheritance.csproj" Id="bb13d8e3-399b-402a-8ee8-8ed0e2d3daf6" />
+  <Project Path="EFQueryData/EFQueryData.csproj" Id="7ccc119a-8023-4694-8200-29fe33972c28" />
   <Project Path="EntityTypesAndMapping/EntityTypesAndMapping.csproj" Id="0b6b08b9-c687-4730-9b97-f301da1f9c73" />
   <Project Path="ORMBasics/ORMBasics.csproj" Id="ac213a78-59b9-4840-8c1c-f804bcebd051" />
   <Project Path="ReverseEngineering/ReverseEngineering.csproj" Id="9c7380c7-6fdf-4f95-b09d-79768a41c5d6" />
