@@ -2,6 +2,7 @@
   <Project Path="EFBasics/EFBasics.csproj" Id="114c2a65-a64c-4b23-a5ba-2b06fce8ed7a" />
   <Project Path="EFConfiguration/EFConfiguration.csproj" Id="2e953849-e247-4962-b735-d4d84584178c" />
   <Project Path="EFMigration/EFMigration.csproj" Id="1b6835f1-827c-4f44-8054-81972f1993e8" />
+  <Project Path="EFMigrationInheritance/EFMigrationInheritance.csproj" Id="bb13d8e3-399b-402a-8ee8-8ed0e2d3daf6" />
   <Project Path="EntityTypesAndMapping/EntityTypesAndMapping.csproj" Id="0b6b08b9-c687-4730-9b97-f301da1f9c73" />
   <Project Path="ORMBasics/ORMBasics.csproj" Id="ac213a78-59b9-4840-8c1c-f804bcebd051" />
   <Project Path="ReverseEngineering/ReverseEngineering.csproj" Id="9c7380c7-6fdf-4f95-b09d-79768a41c5d6" />
