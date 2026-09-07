@@ -1,14 +1,20 @@
 ﻿using EFQueryData.Data;
+using Microsoft.EntityFrameworkCore;
 namespace EFQueryData;
 
 public static class Program
 {
     public static void Main()
     {
-        using var context = new AppDbContext();
-        foreach (var item in context.Courses)
-            Console.WriteLine(item);
+        //QueryDataBasics.Run();
+        //DataLoading.Run();
+        //SplitQueries.Run();
+        //DataJoining.Run();
+        //SelectManyClass.Run();
+        //GroupByClass.Run();
+        PaginationClass.Run();
     }
+
 }
 
 

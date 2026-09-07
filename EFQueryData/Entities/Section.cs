@@ -37,7 +37,7 @@
 
         public override string ToString()
         {
-            return $"{StartDate.ToString("yyyy-MM-dd")} - {EndDate.ToString("yyyy-MM-dd")}";
+            return $"{StartDate:yyyy-MM-dd} - {EndDate:yyyy-MM-dd}";
         }
     }
 }

@@ -10,7 +10,7 @@
 
         public override string ToString()
         {
-            return $"Section Id: {SectionId} | Participant Id: {ParticipantId}";
+            return $"Enrollment ==> Section Id: {SectionId} | Participant Id: {ParticipantId}";
         }
     }
 }

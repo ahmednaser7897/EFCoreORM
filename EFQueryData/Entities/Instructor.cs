@@ -11,7 +11,7 @@
         public ICollection<Section> Sections { get; set; } = new List<Section>();
         public override string ToString()
         {
-            return $"{Id}  | {FName} {LName}";
+            return $"Instructor ==> Id: {Id}  | Name: {FName} {LName}";
         }
     }
 }

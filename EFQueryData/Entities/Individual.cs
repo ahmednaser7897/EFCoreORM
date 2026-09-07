@@ -8,7 +8,7 @@
 
         public override string ToString()
         {
-            return $"{Id}  | {LName}, {FName} | Graduted on ({YearOfGraduation}) From {University}" +
+            return $"Individual ==> {Id}  | {LName}, {FName} | Graduted on ({YearOfGraduation}) From {University}" +
                 $"({(IsIntern ? "Internship" : "")})";
         }
     }

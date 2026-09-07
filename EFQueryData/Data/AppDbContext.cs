@@ -1,6 +1,5 @@
 ﻿using EFQueryData.Entities;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 
 namespace EFQueryData.Data
 {
@@ -23,7 +22,15 @@ namespace EFQueryData.Data
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(ConnectionString.LoadConnectionString());
+            optionsBuilder
+                .UseSqlServer(
+                    ConnectionString.LoadConnectionString(),
+                    o => o.UseQuerySplittingBehavior(QuerySplittingBehavior.SplitQuery)
+                    )
+                .LogTo(Console.WriteLine, Microsoft.Extensions.Logging.LogLevel.Information)
+                ;
+            // Enable Lazy Loading
+            //.UseLazyLoadingProxies();
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

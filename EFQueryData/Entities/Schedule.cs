@@ -16,7 +16,7 @@ namespace EFQueryData.Entities
         public ICollection<Section> Sections { get; set; } = new List<Section>();
         public override string ToString()
         {
-            return $"Schedule Type: {ScheduleType} | SUN: {SUN} | MON: {MON} | TUE: {TUE} | WED: {WED} | THU: {THU} | FRI: {FRI} | SAT: {SAT} | Id: {Id}";
+            return $"Schedule ==> Type: {ScheduleType} | SUN: {SUN} | MON: {MON} | TUE: {TUE} | WED: {WED} | THU: {THU} | FRI: {FRI} | SAT: {SAT} | Id: {Id}";
         }
     }
 }
