@@ -51,7 +51,7 @@ namespace EntityTypesAndMapping
             .Include(o => o.OrderDetails)
             .FirstOrDefault();
             Console.WriteLine($"{order?.Id} {order?.OrderDate}");
-            foreach (var od in order?.OrderDetails)
+            foreach (var od in order?.OrderDetails ?? [])
             {
                 Console.WriteLine($"{od.ProductId} {od.Quantity} {od.UnitPrice}");
             }
