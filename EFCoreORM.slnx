@@ -1,4 +1,5 @@
 <Solution>
+  <Project Path="DBTransaction/DBTransaction.csproj" Id="24aa84d5-bfd6-4e14-8618-fd5db2cc6230" />
   <Project Path="EFBasics/EFBasics.csproj" Id="114c2a65-a64c-4b23-a5ba-2b06fce8ed7a" />
   <Project Path="EFConfiguration/EFConfiguration.csproj" Id="2e953849-e247-4962-b735-d4d84584178c" />
   <Project Path="EFCreateAndDropAPI/EFCreateAndDropAPI.csproj" Id="919d368b-c781-4967-ba18-fb72ab4419d9" />
