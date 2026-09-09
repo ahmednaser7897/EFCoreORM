@@ -62,6 +62,21 @@ public static class SplitQueries
         //     .Include(c => c.Reviews)
         //     .ToList();
         // will use AsSplitQuery implicity by adding in the AppDbContext.OnConfiguring
+        // for the query above this code will execute 3 queries:
+        // 1. SELECT * FROM Courses
+        // 2. SELECT * FROM Sections WHERE SectionId IN (1,2,3,4,5,6)
+        // 3. SELECT * FROM Reviews WHERE ReviewId IN (1,2,3,4,5,6)
+        //BUT the normal include will execute only 1 query
+        // SELECT TOP (2) [c].[Id], [c].[CourseName], [c].[HoursToComplete], [c].[Price]
+        // FROM [Courses] AS [c]
+        // WHERE [c].[Id] = 1
+        // 2. SELECT [s].[Id], [s].[CourseId], [s].[EndDate], [s].[SectionName], [s].[StartDate], [s].[TimeSlot]
+        // FROM [Sections] AS [s]
+        // INNER JOIN ()
+        //  AS [t]
+        // ON [s].[Id] = [t].[Id]
+        //    WHERE [s].[CourseId] = 1
+
         var courses = context.Courses
            .Include(c => c.Sections)
            .Include(c => c.Reviews)

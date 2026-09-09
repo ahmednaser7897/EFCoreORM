@@ -6,13 +6,13 @@ public static class Program
 {
     public static void Main()
     {
-        //QueryDataBasics.Run();
+        QueryDataBasics.Run();
         //DataLoading.Run();
         //SplitQueries.Run();
         //DataJoining.Run();
         //SelectManyClass.Run();
         //GroupByClass.Run();
-        PaginationClass.Run();
+        //PaginationClass.Run();
     }
 
 }

@@ -7,7 +7,8 @@ public static class QueryDataBasics
 {
     public static void Run()
     {
-        QueryData();
+        // QueryData();
+        FindVsSingle();
         // ClientVsServerEvaluation();
         // TrackingVsNoTracking();
     }
@@ -50,6 +51,24 @@ public static class QueryDataBasics
 
         foreach (var course in courses)
             Console.WriteLine(course);
+        Console.WriteLine("\n=========================================");
+    }
+    public static void FindVsSingle()
+    {
+        Console.WriteLine("\n=========== Find Vs Single() =========");
+        using var context = new AppDbContext();
+        // Find() check the local cache first then go to database
+        // if the entity is in the local cache, it will return it without going to the database
+        // Single() always go to the database
+        // so find is faster than single if the entity is in the local cache
+        // Find() can be used with primary key or composite key
+        // Single() can be used with any LINQ expression
+        // if there is no record with the given key, Find() returns null but Single() throws exception
+        // if there are more than one record with the given key, Find() returns the first one but Single() throws exception
+        var course1 = context.Courses.Find(1);
+        Console.WriteLine(course1?.CourseName);
+        var course2 = context.Courses.Single(x => x.Id == 1);
+        Console.WriteLine(course2?.CourseName);
         Console.WriteLine("\n=========================================");
     }
 
